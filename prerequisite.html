@@ -1,0 +1,213 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>CSS Chess Board</title>
+
+<div class="container">
+
+  <div class="panel">
+    <h3>Player (White)</h3>
+    <label class="piece" for="wking">King</label>
+    <label class="piece" for="wqueen">Queen</label>
+    <label class="piece" for="wrook1">Rook 1</label>
+    <label class="piece" for="wrook2">Rook 2</label>
+    <label class="piece" for="wknight1">Knight 1</label>
+    <label class="piece" for="wknight2">Knight 2</label>
+    <label class="piece" for="wbishop1">Bishop 1</label>
+    <label class="piece" for="wbishop2">Bishop 2</label>
+    <label class="piece" for="wp1">Pawn A</label>
+    <label class="piece" for="wp2">Pawn B</label>
+    <label class="piece" for="wp3">Pawn C</label>
+    <label class="piece" for="wp4">Pawn D</label>
+    <label class="piece" for="wp5">Pawn E</label>
+    <label class="piece" for="wp6">Pawn F</label>
+    <label class="piece" for="wp7">Pawn G</label>
+    <label class="piece" for="wp8">Pawn H</label>
+  </div>
+
+  <!-- Hidden Inputs -->
+  <input type="checkbox" id="wking"><input type="checkbox" id="wqueen">
+  <input type="checkbox" id="wrook1"><input type="checkbox" id="wrook2">
+  <input type="checkbox" id="wknight1"><input type="checkbox" id="wknight2">
+  <input type="checkbox" id="wbishop1"><input type="checkbox" id="wbishop2">
+  <input type="checkbox" id="wp1"><input type="checkbox" id="wp2"><input type="checkbox" id="wp3"><input type="checkbox" id="wp4"><input type="checkbox" id="wp5"><input type="checkbox" id="wp6"><input type="checkbox" id="wp7"><input type="checkbox" id="wp8">
+
+  <input type="checkbox" id="bking"><input type="checkbox" id="bqueen">
+  <input type="checkbox" id="brook1"><input type="checkbox" id="brook2">
+  <input type="checkbox" id="bknight1"><input type="checkbox" id="bknight2">
+  <input type="checkbox" id="bbishop1"><input type="checkbox" id="bbishop2">
+  <input type="checkbox" id="bp1"><input type="checkbox" id="bp2"><input type="checkbox" id="bp3"><input type="checkbox" id="bp4"><input type="checkbox" id="bp5"><input type="checkbox" id="bp6"><input type="checkbox" id="bp7"><input type="checkbox" id="bp8">
+
+  <div class="board">
+    <!-- Row 8 -->
+    <div class="square light a8"></div><div class="square dark b8"></div><div class="square light c8"></div><div class="square dark d8"></div>
+    <div class="square light e8"></div><div class="square dark f8"></div><div class="square light g8"></div><div class="square dark h8"></div>
+
+    <!-- Row 7 -->
+    <div class="square dark a7"></div><div class="square light b7"></div><div class="square dark c7"></div><div class="square light d7"></div>
+    <div class="square dark e7"></div><div class="square light f7"></div><div class="square dark g7"></div><div class="square light h7"></div>
+
+    <!-- Empty rows -->
+    <div class="square light"></div><div class="square dark"></div><div class="square light"></div><div class="square dark"></div>
+    <div class="square light"></div><div class="square dark"></div><div class="square light"></div><div class="square dark"></div>
+
+    <div class="square dark"></div><div class="square light"></div><div class="square dark"></div><div class="square light"></div>
+    <div class="square dark"></div><div class="square light"></div><div class="square dark"></div><div class="square light"></div>
+
+    <div class="square light"></div><div class="square dark"></div><div class="square light"></div><div class="square dark"></div>
+    <div class="square light"></div><div class="square dark"></div><div class="square light"></div><div class="square dark"></div>
+
+    <div class="square dark"></div><div class="square light"></div><div class="square dark"></div><div class="square light"></div>
+    <div class="square dark"></div><div class="square light"></div><div class="square dark"></div><div class="square light"></div>
+
+    <!-- Row 2 -->
+    <div class="square light a2"></div><div class="square dark b2"></div><div class="square light c2"></div><div class="square dark d2"></div>
+    <div class="square light e2"></div><div class="square dark f2"></div><div class="square light g2"></div><div class="square dark h2"></div>
+
+    <!-- Row 1 -->
+    <div class="square dark a1"></div><div class="square light b1"></div><div class="square dark c1"></div><div class="square light d1"></div>
+    <div class="square dark e1"></div><div class="square light f1"></div><div class="square dark g1"></div><div class="square light h1"></div>
+  </div>
+
+  <div class="panel">
+    <h3>Opponent (Black)</h3>
+    <label class="piece" for="bking">King</label>
+    <label class="piece" for="bqueen">Queen</label>
+    <label class="piece" for="brook1">Rook 1</label>
+    <label class="piece" for="brook2">Rook 2</label>
+    <label class="piece" for="bknight1">Knight 1</label>
+    <label class="piece" for="bknight2">Knight 2</label>
+    <label class="piece" for="bbishop1">Bishop 1</label>
+    <label class="piece" for="bbishop2">Bishop 2</label>
+    <label class="piece" for="bp1">Pawn A</label>
+    <label class="piece" for="bp2">Pawn B</label>
+    <label class="piece" for="bp3">Pawn C</label>
+    <label class="piece" for="bp4">Pawn D</label>
+    <label class="piece" for="bp5">Pawn E</label>
+    <label class="piece" for="bp6">Pawn F</label>
+    <label class="piece" for="bp7">Pawn G</label>
+    <label class="piece" for="bp8">Pawn H</label>
+  </div>
+
+</div>
+
+<style>
+  body {
+    margin: 0;
+    font-family: Arial, sans-serif;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 100vh;
+    background: #222;
+    color: white;
+  }
+
+  .container {
+    display: flex;
+    align-items: center;
+    gap: 20px;
+  }
+
+  .panel {
+    width: 170px;
+    padding: 10px;
+    background: #333;
+    border-radius: 10px;
+    text-align: center;
+    max-height: 520px;
+    overflow-y: auto;
+  }
+
+  .panel h3 {
+    margin-bottom: 10px;
+  }
+
+  .piece {
+    display: block;
+    padding: 6px;
+    margin: 4px 0;
+    background: #555;
+    border-radius: 6px;
+    cursor: pointer;
+  }
+
+  .piece:hover { background: #777; }
+
+  .board {
+    display: grid;
+    grid-template-columns: repeat(8, 60px);
+    grid-template-rows: repeat(8, 60px);
+    border: 4px solid #111;
+  }
+
+  .square {
+    width: 60px;
+    height: 60px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    position: relative;
+  }
+
+  .square::after{
+    content: "";
+    position: absolute;
+    width: 48px;
+    height: 48px;
+    background-size: contain;
+    background-repeat: no-repeat;
+    background-position: center;
+  }
+
+  .light { background: #f0d9b5; }
+  .dark { background: #b58863; }
+
+  input { display: none; }
+
+  /* WHITE PIECES */
+  #wking:checked ~ .board .e1::after { background-image: url('https://upload.wikimedia.org/wikipedia/commons/4/42/Chess_klt45.svg'); }
+  #wqueen:checked ~ .board .d1::after { background-image: url('https://upload.wikimedia.org/wikipedia/commons/1/15/Chess_qlt45.svg'); }
+  #wrook1:checked ~ .board .a1::after,
+  #wrook2:checked ~ .board .h1::after { background-image: url('https://upload.wikimedia.org/wikipedia/commons/7/72/Chess_rlt45.svg'); }
+  #wknight1:checked ~ .board .b1::after,
+  #wknight2:checked ~ .board .g1::after { background-image: url('https://upload.wikimedia.org/wikipedia/commons/7/70/Chess_nlt45.svg'); }
+  #wbishop1:checked ~ .board .c1::after,
+  #wbishop2:checked ~ .board .f1::after { background-image: url('https://upload.wikimedia.org/wikipedia/commons/b/b1/Chess_blt45.svg'); }
+
+  #wp1:checked ~ .board .a2::after,
+  #wp2:checked ~ .board .b2::after,
+  #wp3:checked ~ .board .c2::after,
+  #wp4:checked ~ .board .d2::after,
+  #wp5:checked ~ .board .e2::after,
+  #wp6:checked ~ .board .f2::after,
+  #wp7:checked ~ .board .g2::after,
+  #wp8:checked ~ .board .h2::after { background-image: url('https://upload.wikimedia.org/wikipedia/commons/4/45/Chess_plt45.svg'); }
+
+  /* BLACK PIECES */
+  #bking:checked ~ .board .e8::after { background-image: url('https://upload.wikimedia.org/wikipedia/commons/f/f0/Chess_kdt45.svg'); }
+  #bqueen:checked ~ .board .d8::after { background-image: url('https://upload.wikimedia.org/wikipedia/commons/4/47/Chess_qdt45.svg'); }
+  #brook1:checked ~ .board .a8::after,
+  #brook2:checked ~ .board .h8::after { background-image: url('https://upload.wikimedia.org/wikipedia/commons/f/ff/Chess_rdt45.svg'); }
+  #bknight1:checked ~ .board .b8::after,
+  #bknight2:checked ~ .board .g8::after { background-image: url('https://upload.wikimedia.org/wikipedia/commons/e/ef/Chess_ndt45.svg'); }
+  #bbishop1:checked ~ .board .c8::after,
+  #bbishop2:checked ~ .board .f8::after { background-image: url('https://upload.wikimedia.org/wikipedia/commons/9/98/Chess_bdt45.svg'); }
+
+  #bp1:checked ~ .board .a7::after,
+  #bp2:checked ~ .board .b7::after,
+  #bp3:checked ~ .board .c7::after,
+  #bp4:checked ~ .board .d7::after,
+  #bp5:checked ~ .board .e7::after,
+  #bp6:checked ~ .board .f7::after,
+  #bp7:checked ~ .board .g7::after,
+  #bp8:checked ~ .board .h7::after { background-image: url('https://upload.wikimedia.org/wikipedia/commons/c/c7/Chess_pdt45.svg'); }
+
+</style>
+</head>
+<body>
+  
+</body>
+</html>

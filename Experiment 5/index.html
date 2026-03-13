@@ -1,0 +1,40 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Employee Salary Management System</title>
+
+<link rel="stylesheet" href="style.css">
+
+</head>
+
+<body>
+
+<div class="container">
+
+<h2>Employee Salary Management System</h2>
+
+<input type="text" id="name" placeholder="Employee Name">
+<input type="text" id="id" placeholder="Employee ID">
+<input type="number" id="salary" placeholder="Salary">
+<input type="text" id="department" placeholder="Department">
+
+<button onclick="addEmployee()">Add Employee</button>
+
+<br>
+
+<button onclick="displayAll()">Display All</button>
+<button onclick="salaryAbove()">Salary > 50000</button>
+<button onclick="totalSalary()">Total Salary</button>
+<button onclick="averageSalary()">Average Salary</button>
+<button onclick="countDepartment()">Count by Department</button>
+
+<div id="output"></div>
+
+</div>
+
+<script src="main.jsx"></script>
+
+</body>
+</html>

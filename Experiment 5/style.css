@@ -28,14 +28,14 @@ button{
 padding:12px;
 margin:6px;
 border:none;
-background:#2ecc71;
+background: purple;
 color:white;
 border-radius:5px;
 cursor:pointer;
 }
 
 button:hover{
-background:#27ae60;
+background: purple;
 }
 
 #output{

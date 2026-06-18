@@ -1,0 +1,149 @@
+<!doctype html>
+<html lang="en">
+    <head>
+        <meta charset="UTF-8" />
+        <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+
+        <title>Registration Form</title>
+
+        <script src="https://unpkg.com/react@18/umd/react.development.js"></script>
+        <script src="https://unpkg.com/react-dom@18/umd/react-dom.development.js"></script>
+
+        <script src="https://unpkg.com/@babel/standalone/babel.min.js"></script>
+    </head>
+    <body>
+        <style>
+            body {
+                margin: 0;
+                height: 100vh;
+
+                display: flex;
+                justify-content: center;
+                align-items: center;
+
+                background-color: #f4f4f4;
+            }
+
+            .card {
+                background-color: white;
+
+                padding: 30px;
+
+                width: 300px;
+
+                border-radius: 10px;
+            }
+
+            h1 {
+                text-align: center;
+                margin-bottom: 20px;
+            }
+
+            input {
+                width: 100%;
+
+                padding: 10px;
+
+                margin-top: 5px;
+
+                box-sizing: border-box;
+            }
+
+            button {
+                width: 100%;
+
+                padding: 10px;
+
+                margin-top: 15px;
+
+                cursor: pointer;
+            }
+        </style>
+
+        <div id="root"></div>
+
+        <script type="text/babel">
+            const { useState } = React;
+
+            function App() {
+                const [name, setName] = useState("");
+                const [email, setEmail] = useState("");
+                const [password, setPassword] = useState("");
+
+                function handleSubmit(event) {
+                    event.preventDefault();
+
+                    if (email === "" || password === "") {
+                        alert("Email and Password are required");
+                        return;
+                    }
+
+                    console.log(name);
+                    console.log(email);
+                    console.log(password);
+
+                    alert("Registration Successful");
+                }
+
+                return (
+                    <div>
+                        <h1>Registration Form</h1>
+
+                        <form onSubmit={handleSubmit}>
+                            <div>
+                                <label>Name:</label>
+                                <br />
+
+                                <input
+                                    type="text"
+                                    value={name}
+                                    onChange={(event) =>
+                                        setName(event.target.value)
+                                    }
+                                />
+                            </div>
+
+                            <br />
+
+                            <div>
+                                <label>Email:</label>
+                                <br />
+
+                                <input
+                                    type="email"
+                                    value={email}
+                                    onChange={(event) =>
+                                        setEmail(event.target.value)
+                                    }
+                                />
+                            </div>
+
+                            <br />
+
+                            <div>
+                                <label>Password:</label>
+                                <br />
+
+                                <input
+                                    type="password"
+                                    value={password}
+                                    onChange={(event) =>
+                                        setPassword(event.target.value)
+                                    }
+                                />
+                            </div>
+
+                            <br />
+
+                            <button type="submit">Register</button>
+                        </form>
+                    </div>
+                );
+            }
+
+            const root = ReactDOM.createRoot(document.getElementById("root"));
+
+            root.render(<App />);
+        </script>
+    </body>
+</html>
